@@ -10,6 +10,7 @@ def grabImage():
     root = tk.Tk()
     root.attributes("-fullscreen", True)
     root.attributes("-alpha", 0.1)
+    root.attributes("-topmost", True)
 
     canvas = tk.Canvas(root, bg="black", highlightthickness=0)
     canvas.pack(fill=tk.BOTH, expand=True)
