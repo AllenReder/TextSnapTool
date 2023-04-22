@@ -40,7 +40,7 @@ def grabImage():
     root.mainloop()
 
     grab_box = (rect_start[0], rect_start[1], rect_end[0], rect_end[1])
-    print(grab_box)
+    # print(grab_box)
     im = ImageGrab.grab(bbox=grab_box)
 
     return im
