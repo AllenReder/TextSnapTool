@@ -3,14 +3,15 @@ from PIL import ImageGrab
 
 
 def grabImage():
+    # 截图矩形的起始坐标
     rect_start = None
     rect_end = None
     rect = None
 
     root = tk.Tk()
-    root.attributes("-fullscreen", True)
-    root.attributes("-alpha", 0.1)
-    root.attributes("-topmost", True)
+    root.attributes("-fullscreen", True) # 全屏
+    root.attributes("-alpha", 0.2) # 透明度
+    root.attributes("-topmost", True) # 窗口置顶
 
     canvas = tk.Canvas(root, bg="black", highlightthickness=0)
     canvas.pack(fill=tk.BOTH, expand=True)
@@ -19,8 +20,8 @@ def grabImage():
     def on_mouse_down(event):
         nonlocal rect_start, rect
         rect_start = (event.x, event.y)
-        rect = canvas.create_rectangle(
-            rect_start[0], rect_start[1], rect_start[0], rect_start[1], outline="white", fill="white")
+        # 创建矩形
+        rect = canvas.create_rectangle(rect_start[0], rect_start[1], rect_start[0], rect_start[1], outline="white", fill="white")
 
     # 移动
     def on_mouse_move(event):
