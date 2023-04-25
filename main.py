@@ -1,18 +1,14 @@
 from cnocr import CnOcr
-from grab_img import grabImage
-import pyperclip
+import tkinter as tk
+from gui import Application
 
 
 # img = 'C:/Users/Allen/Pictures/test.jpg'
-ocr = CnOcr()  # 所有参数都使用默认值
 
 
 if __name__ == '__main__':
-    img = grabImage()
-    img.save("screenshot.png")
-    out = ocr.ocr(img)
-    text = ''
-    for thing in out:
-        print(thing['text'])
-        text = text + '\n' + thing['text']
-    pyperclip.copy(text)
+
+    # 创建 gui 窗口
+    root = tk.Tk()
+    app = Application(master=root)
+    app.mainloop()
